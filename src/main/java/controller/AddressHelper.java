@@ -18,58 +18,6 @@ import model.Address;
 public class AddressHelper {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	static EntityManagerFactory emfactory = 
-
-
-	 public List<Address> showAllItems(){
-		 EntityManager em = emfactory.createEntityManager();
-		 List<Address> allItems = em.createQuery("SELECT i FROM ListItem i").getResultList();
-		 return allItems; 
-		 }
-	
-
 		/**
 		 * @param toDelete
 		 */
