@@ -22,7 +22,7 @@ public class ViewAllItemsServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContactItemsHelper dao = new ContactItemsHelper();	//create instance of ListAddressHelper to access helper objects
-		request.setAttribute("allAddresses", dao.showAllAddresses());  	//set the variable to use in the view all address-list.jsp page
+		request.setAttribute("allContacts", dao.showAllContacts());  	//set the variable to use in the view all address-list.jsp page
 		String path = "/address-list.jsp";		//set path for the servlet to redirect to
 		
 		getServletContext().getRequestDispatcher(path).forward(request, response);
