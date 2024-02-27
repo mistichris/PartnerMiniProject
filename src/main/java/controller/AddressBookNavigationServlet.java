@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class EditItemServlet
+ * Servlet implementation class AddressBookNavigationServlet
  */
-@WebServlet("/EditItemServlet")
-public class EditItemServlet extends HttpServlet {
+@WebServlet("/AddressBookNavigationServlet")
+public class AddressBookNavigationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       //Larry will do
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditItemServlet() {
+    public AddressBookNavigationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
