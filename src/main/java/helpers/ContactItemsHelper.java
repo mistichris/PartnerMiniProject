@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import model.ContactItems;
 
@@ -28,8 +29,6 @@ public class ContactItemsHelper {
 		List<ContactItems> allContacts = em.createQuery("SELECT i FROM ContactItems i").getResultList();
 		return allContacts;
 	}
-
-	
 	
 	/**
 	 * @param toDelete
@@ -48,10 +47,10 @@ public class ContactItemsHelper {
 
 		// get the result and save it into a new list item
 		ContactItems result = typedQuery.getSingleResult();
-		// remove it em.remove(result);
+		// remove it 
+		em.remove(result);
 		em.getTransaction().commit();
 		em.close();
-
 	}
 
 	/**
@@ -108,7 +107,6 @@ public class ContactItemsHelper {
 		em.merge(toEdit);
 		em.getTransaction().commit();
 		em.close();
-
 	}
 
 	// closing Entity Manager Factory

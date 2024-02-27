@@ -22,7 +22,7 @@ public class AddContactTester {
 		ContactItems morty = new ContactItems("Morty", "Smith", "515-555-5678", "morty@gmail.com");
 		lah.insertAddress(morty);
 		
-		List<ContactItems> allListAddress = lah.showAllAddresses();
+		List<ContactItems> allListAddress = lah.showAllContacts();
 		for(ContactItems a: allListAddress) {
 			System.out.println(a.toString());
 		}
