@@ -12,8 +12,8 @@ import javax.persistence.Table;
  * Feb 26, 2024
  */
 @Entity // creates a new table
-@Table(name = "listAddress") // names the table
-public class ListAddress {
+@Table(name = "ContactItems") // names the table
+public class ContactItems {
 	@Id // Marks as primary key field
 	@GeneratedValue // Auto generates the primary key in the database
 	@Column(name = "ID") // Column Heading Name
@@ -36,12 +36,12 @@ public class ListAddress {
 	private String email;
 	
 	//Default constructor
-	public ListAddress() {
+	public ContactItems() {
 		super();
 	}
 	
 	//Constructor with all fields
-	public ListAddress(String firstName, String lastName, String streetAddress, String city, String state,
+	public ContactItems(String firstName, String lastName, String streetAddress, String city, String state,
 			String zip, String phone, String email) {
 		super();
 		this.firstName = firstName;
@@ -55,7 +55,7 @@ public class ListAddress {
 	}
 	
 	//Constructor with name, email and phone only
-	public ListAddress(String firstName, String lastName, String phone, String email) {
+	public ContactItems(String firstName, String lastName, String phone, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -64,7 +64,7 @@ public class ListAddress {
 	}
 	
 	//Constructor with name and phone only
-	public ListAddress(String firstName, String lastName, String phone) {
+	public ContactItems(String firstName, String lastName, String phone) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;

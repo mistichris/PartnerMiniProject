@@ -2,8 +2,8 @@ package testers;
 
 import java.util.List;
 
-import helpers.ListAddressHelper;
-import model.ListAddress;
+import helpers.ContactItemsHelper;
+import model.ContactItems;
 
 /**
  * @author Misti Christianson - mchristianson CIS175 - Spring 2024 Feb 27, 2024
@@ -11,19 +11,19 @@ import model.ListAddress;
 public class AddContactTester {
 
 	public static void main(String[] args) {
-		ListAddressHelper lah = new ListAddressHelper();
+		ContactItemsHelper lah = new ContactItemsHelper();
 
-		ListAddress harry = new ListAddress("Harry", "Potter", "515-555-1234");
+		ContactItems harry = new ContactItems("Harry", "Potter", "515-555-1234");
 		lah.insertAddress(harry);
 		
-		ListAddress rick = new ListAddress("Rick", "Sanchez", "515-555-4567", "rick@citadel.org");
+		ContactItems rick = new ContactItems("Rick", "Sanchez", "515-555-4567", "rick@citadel.org");
 		lah.insertAddress(rick);
 		
-		ListAddress morty = new ListAddress("Morty", "Smith", "515-555-5678", "morty@gmail.com");
+		ContactItems morty = new ContactItems("Morty", "Smith", "515-555-5678", "morty@gmail.com");
 		lah.insertAddress(morty);
 		
-		List<ListAddress> allListAddress = lah.showAllAddresses();
-		for(ListAddress a: allListAddress) {
+		List<ContactItems> allListAddress = lah.showAllAddresses();
+		for(ContactItems a: allListAddress) {
 			System.out.println(a.toString());
 		}
 	}

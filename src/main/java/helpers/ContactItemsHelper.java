@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import model.ListAddress;
+import model.ContactItems;
 
 
 /**
@@ -14,11 +14,11 @@ import model.ListAddress;
  * CIS175 -Spring 2024
  * Feb 26, 2024
  */
-public class ListAddressHelper {
+public class ContactItemsHelper {
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("PartnerMiniProject");		//creating a global instance of the Entity Manager Factory
 	
 	
-	public void insertAddress(ListAddress contactItem) {							//add an book to the database/table
+	public void insertAddress(ContactItems contactItem) {							//add an book to the database/table
 		EntityManager em = emfactory.createEntityManager();			//creates a new instance of the Entity Manager
 		em.getTransaction().begin();
 		em.persist(contactItem);
@@ -27,9 +27,9 @@ public class ListAddressHelper {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<ListAddress> showAllAddresses(){
+	public List<ContactItems> showAllAddresses(){
 		EntityManager em = emfactory.createEntityManager();
-		List<ListAddress> allAddresses = em.createQuery("SELECT i FROM ListAddress i").getResultList();
+		List<ContactItems> allAddresses = em.createQuery("SELECT i FROM ContactItems i").getResultList();
 		return allAddresses;		
 	}
 	
