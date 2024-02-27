@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * Feb 26, 2024
  */
 @Entity // creates a new table
-@Table(name = "addresslist") // names the table
+@Table(name = "listAddress") // names the table
 public class ListAddress {
 	@Id // Marks as primary key field
 	@GeneratedValue // Auto generates the primary key in the database

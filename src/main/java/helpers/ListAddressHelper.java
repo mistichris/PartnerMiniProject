@@ -18,19 +18,21 @@ public class ListAddressHelper {
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("PartnerMiniProject");		//creating a global instance of the Entity Manager Factory
 	
 	
-	public void insertAddress(ListAddress addressItem) {							//add an book to the database/table
+	public void insertAddress(ListAddress contactItem) {							//add an book to the database/table
 		EntityManager em = emfactory.createEntityManager();			//creates a new instance of the Entity Manager
 		em.getTransaction().begin();
-		em.persist(addressItem);
+		em.persist(contactItem);
 		em.getTransaction().commit();
 		em.close();													//closes Entity Manager
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<ListAddress> showAllAddresses(){
 		EntityManager em = emfactory.createEntityManager();
-		List<ListAddress> allAddresses = em.createQuery("SELECT i FROM Address i").getResultList();
+		List<ListAddress> allAddresses = em.createQuery("SELECT i FROM ListAddress i").getResultList();
 		return allAddresses;		
 	}
+	
 	
 	
 	
