@@ -12,7 +12,7 @@
 	<form method="post" action="NavigationServlet">
 		<table>
 			<!-- pull variable created in ViewAllItemsServlet and assign a new variable to use in page  -->
-			<c:forEach items="${requestScope.allAddresses}"> var="currentContact">
+			<c:forEach items="${requestScope.allAddresses}" var="currentContact">
 				<tr>
 					<td><input type="radio" name="id" value="${currentContact.id}"></td>
 					<td>${currentContact.firstName}</td>

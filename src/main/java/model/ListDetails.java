@@ -23,7 +23,9 @@ public class ListDetails {
 	private int id;
 	private String listName;
 	private LocalDate createdDate;
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	private ListOwner owner;
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 	private List<ContactItems> listOfContacts;
 	
 	//ToDo	Create relationships with ListOwner -- but which ones
@@ -36,14 +38,28 @@ public class ListDetails {
 		super();
 	}
 	
-	//constructor with parameters
-	public ListDetails(String listName, ListOwner owner, List<ContactItems> listOfContacts) {
+	//constructor with parameters with different parameters accepted
+	public ListDetails(int id, String listName, ListOwner owner,
+			List<ContactItems> listOfContacts) {
 		super();
+		this.id = id;
 		this.listName = listName;
 		this.owner = owner;
 		this.listOfContacts = listOfContacts;
-		setCreatedDate(LocalDate.now());
-		
+		createdDate = LocalDate.now();
+	}
+	
+	public ListDetails(String listName, ListOwner owner, List<ContactItems> listOfContacts) {
+		this.listName = listName;
+		this.owner = owner;
+		this.listOfContacts = listOfContacts;
+		createdDate = LocalDate.now();
+	}
+	
+	public ListDetails(String listName, ListOwner owner) {
+		this.listName = listName;
+		this.owner = owner;
+		createdDate = LocalDate.now();
 	}
 
 	//Getters and Setters minus ID field
@@ -79,4 +95,12 @@ public class ListDetails {
 	public void setListOfContacts(List<ContactItems> listOfContacts) {
 		this.listOfContacts = listOfContacts;
 	}
+
+	@Override
+	public String toString() {
+		return "ListDetails [id=" + id + ", listName=" + listName + ", createdDate=" + createdDate + ", owner=" + owner
+				+ ", listOfContacts=" + listOfContacts + "]";
+	}
+	
+	
 }
