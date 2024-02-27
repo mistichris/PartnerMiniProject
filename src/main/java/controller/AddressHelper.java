@@ -18,16 +18,8 @@ import model.Address;
 public class AddressHelper {
 	
 	static EntityManagerFactory emfactory = 
-			Persistence.createEntityManagerFactory("AddressBook");		//creating a global instance of the Entity Manager Factory
-	
-	public void insertAddress(Address a) {							//add an book to the database/table
-		EntityManager em = emfactory.createEntityManager();			//creates a new instance of the Entity Manager
-		em.getTransaction().begin();
-		em.persist(a);
-		em.getTransaction().commit();
-		em.close();													//closes Entity Manager
-	}
-	
+
+
 	 public List<Address> showAllItems(){
 		 EntityManager em = emfactory.createEntityManager();
 		 List<Address> allItems = em.createQuery("SELECT i FROM ListItem i").getResultList();
