@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>All Address Books List</h1>
-	<form>
+	<form action="" method="">
 		<table>
 			<c:forEach items="${requestScope.allLists}" var="currentAddressBook">
 				<tr>
@@ -26,8 +26,7 @@
 				<c:forEach items="${currentAddressBook.listOfContacts}"
 					var="contactsList">
 					<tr>
-						<td>${contactsList.firstName}
-							${contactsList.lastName}</td>
+						<td>${contactsList.firstName}${contactsList.lastName}</td>
 						<td></td>
 						<td colspan="3">Phone#: ${contactsList.phone}</td>
 					</tr>
@@ -53,6 +52,8 @@
 			name="doThisToList"> <input type="submit"
 			value="Add An Address Book" name="doThisToList">
 	</form>
-
+	<button onclick="window.location.href='add-contact.jsp'">Add A
+		New Contact</button>
+	<button onclick="window.location.href='index.html'">Main Menu</button>
 </body>
 </html>

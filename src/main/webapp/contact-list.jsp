@@ -30,9 +30,8 @@
 		<input type="submit" value="Delete" name="doActionToContact">
 	</form>
 	<br />
-	<form action="AddItemServlet" method="post">
-		<button type="submit">Add a Contact</button>
-	</form>
+	<button onclick="window.location.href='add-contact.jsp'">Add A
+		New Contact</button>
 	<button onclick="window.location.href='index.html'">Main Menu</button>
 </body>
 </html>

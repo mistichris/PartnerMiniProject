@@ -14,24 +14,15 @@ import model.ContactItems;
 /**
  * Servlet implementation class AddItemServlet
  */
-@WebServlet("/addItemServlet")
+@WebServlet("/AddItemServlet")
 public class AddItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	  //Larry will Do
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AddItemServlet() {
+    
+	public AddItemServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String streetAddress = request.getParameter("streetAddress");
@@ -51,7 +42,7 @@ public class AddItemServlet extends HttpServlet {
 	     ContactItemsHelper dao = new ContactItemsHelper();
 	     dao.insertAddress(ContactItems);
 	             
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/add-contact.jsp").forward(request, response);
 		}
 	}
 

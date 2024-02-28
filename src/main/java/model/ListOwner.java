@@ -41,7 +41,7 @@ public class ListOwner {
 
 	@Override
 	public String toString() {
-		return "ListOwner [id=" + id + ", listOwnerName=" + listOwnerName + "]";
+		return listOwnerName;
 	}
 
 }
