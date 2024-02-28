@@ -17,9 +17,9 @@ import model.ListOwner;
 public class AddListDetailsTester {
 
 	public static void main(String[] args) {
-		ListOwner summer = new ListOwner("Summer");
-		ListOwnerHelper loh = new ListOwnerHelper();
-		loh.insertListOwner(summer);
+		ListOwner summer = new ListOwner("Summer Smith");
+//		ListOwnerHelper loh = new ListOwnerHelper();
+//		loh.insertListOwner(summer);
 		
 		ListDetailsHelper ldh = new ListDetailsHelper();
 		

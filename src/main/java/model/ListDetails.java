@@ -25,7 +25,7 @@ public class ListDetails {
 	private LocalDate createdDate;
 	@ManyToOne(cascade=CascadeType.PERSIST)
 	private ListOwner owner;
-	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private List<ContactItems> listOfContacts;
 	
 	//ToDo	Create relationships with ListOwner -- but which ones
