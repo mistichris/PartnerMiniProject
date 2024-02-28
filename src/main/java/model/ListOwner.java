@@ -12,17 +12,15 @@ public class ListOwner {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String firstName;
-	private String lastName;
+	private String listOwnerName;
 
 	public ListOwner() {
 		super();
 	}
 
-	public ListOwner(String firstName, String lastName) {
+	public ListOwner(String listOwnerName) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.listOwnerName = listOwnerName;
 	}
 
 	public int getId() {
@@ -33,26 +31,17 @@ public class ListOwner {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getlistOwnerName() {
+		return listOwnerName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setlistOwnerName(String listOwnerName) {
+		this.listOwnerName = listOwnerName;
 	}
 
 	@Override
 	public String toString() {
-		return "ListOwner [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "ListOwner [id=" + id + ", listOwnerName=" + listOwnerName + "]";
 	}
 
 }

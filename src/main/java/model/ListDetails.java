@@ -75,7 +75,6 @@ public class ListDetails {
 		return createdDate;
 	}
 
-
 	public void setCreatedDate(LocalDate createdDate) {
 		createdDate =  LocalDate.now();
 	}
@@ -94,6 +93,14 @@ public class ListDetails {
 
 	public void setListOfContacts(List<ContactItems> listOfContacts) {
 		this.listOfContacts = listOfContacts;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override

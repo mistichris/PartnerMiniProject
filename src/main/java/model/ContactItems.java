@@ -71,6 +71,13 @@ public class ContactItems {
 		this.phone = phone;
 	}
 	
+	//Constructor with name and phone only
+	public ContactItems(String firstName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
 	//Getters and setters
 	public String getFirstName() {
 		return firstName;
