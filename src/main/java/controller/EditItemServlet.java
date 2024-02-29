@@ -7,10 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import helpers.ContactItemsHelper;
+import model.ContactItems;
+
 /**
  * Servlet implementation class EditItemServlet
  */
-@WebServlet("/EditItemServlet")
+@WebServlet("/editItemServlet")
 public class EditItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        //Larry will do
@@ -35,7 +38,32 @@ public class EditItemServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		ContactItemsHelper dao = new ContactItemsHelper();
+		
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String streetAddress = request.getParameter("streetAddress");
+		String city = request.getParameter("city");
+		String state = request.getParameter("state");
+		String zip = request.getParameter("zip");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		
+		Integer tempId = Integer.parseInt(request.getParameter("id"));
+		ContactItems itemToUpdate = dao.searchForContactItemsById(tempId);
+				
+		itemToUpdate.setFirstName(firstName);
+		itemToUpdate.setLastName(lastName);
+		itemToUpdate.setStreetAddress(streetAddress);
+		itemToUpdate.setCity(city);
+		itemToUpdate.setState(state);
+		itemToUpdate.setZip(zip);
+		itemToUpdate.setPhone(phone);
+		itemToUpdate.setEmail(email);
+		
+		dao.updateItem(itemToUpdate);
+		getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
+
 	}
 
 }
