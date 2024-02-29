@@ -15,7 +15,7 @@ import model.ListDetails;
 /**
  * Servlet implementation class ViewAllAddressBooksServlet
  */
-@WebServlet("/ViewAllAddressBooksServlet")
+@WebServlet("/viewAllAddressBooksServlet")
 public class ViewAllAddressBooksServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
