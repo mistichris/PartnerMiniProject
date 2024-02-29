@@ -12,7 +12,7 @@ import helpers.ContactItemsHelper;
 /**
  * Servlet implementation class ViewAllItemsServlet
  */
-@WebServlet("/ViewAllItemsServlet")
+@WebServlet("/iewAllItemsServlet")
 public class ViewAllItemsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +27,7 @@ public class ViewAllItemsServlet extends HttpServlet {
 		if(dao.showAllContacts().isEmpty()){
 			path = "/index.html";
 
-			}
+		}
 			
 		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
@@ -37,4 +37,3 @@ public class ViewAllItemsServlet extends HttpServlet {
 	}
 
 }
-

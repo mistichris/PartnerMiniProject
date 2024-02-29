@@ -43,7 +43,7 @@ public class AddItemServlet extends HttpServlet {
 	     ContactItemsHelper dao = new ContactItemsHelper();
 	     dao.insertAddress(ContactItems);
 	             
-		getServletContext().getRequestDispatcher("/add-contact.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		}
 	}
 

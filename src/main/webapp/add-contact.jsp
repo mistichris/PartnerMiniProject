@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Add A New Contact To Database</h1>
-	<form action="AddItemServlet" method="post">
+	<form action="addItemServlet" method="post">
 		<h2>Contact Info:</h2>
 
 		<table>

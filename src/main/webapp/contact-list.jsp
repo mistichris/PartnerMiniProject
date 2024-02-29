@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Contacts List</h1>
-	<form method="post" action="NavigationServlet">
+	<form method="post" action="navigationServlet">
 		<table>
 			<!-- pull variable created in ViewAllItemsServlet and assign a new variable to use in page  -->
 			<c:forEach items="${requestScope.allContacts}" var="currentContact">
