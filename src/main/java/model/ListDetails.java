@@ -38,6 +38,27 @@ public class ListDetails {
 		super();
 	}
 	
+	public ListDetails(int id, String listName, LocalDate createdDate, ListOwner owner, List<ContactItems> listOfContacts) {
+		   this.id = id;
+	       this.listName = listName;
+	       this.createdDate = createdDate;
+	       this.owner = owner;
+	       this.listOfContacts = listOfContacts; 
+	}
+	public ListDetails(String listName, LocalDate createdDate, ListOwner owner , List<ContactItems> listOfContacts) {
+		   this.listName = listName;
+	       this.createdDate = createdDate;
+	       this.owner  = owner;
+	       this.listOfContacts = listOfContacts; 
+			         
+	}
+	public ListDetails(String listName, LocalDate createdDate, ListOwner owner) {
+		this.listName = listName;
+		this.createdDate = createdDate;
+		this.owner = owner;
+	}
+
+
 	//constructor with parameters with different parameters accepted
 	public ListDetails(int id, String listName, ListOwner owner,
 			List<ContactItems> listOfContacts) {
@@ -61,6 +82,7 @@ public class ListDetails {
 		this.owner = owner;
 		createdDate = LocalDate.now();
 	}
+
 
 	//Getters and Setters minus ID field
 	public String getListName() {
