@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import helpers.ListDetailsHelper;
-import helpers.ListItemHelper;
+import helpers.ContactItemsHelper;
 import model.ListDetails;
-import model.ListItem;
-import model.Shopper;
+import model.ContactItems;
+import model.ListOwner;
 
 /**
  * Servlet implementation class CreateNewAddressListServlet
@@ -29,36 +29,33 @@ public class CreateNewAddressBookServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ListItemHelper lih = new ListItemHelper();
+		ContactItemsHelper cih = new ContactItemsHelper();
 		String listName = request.getParameter("listName");
 		System.out.println("List Name: " + listName);
 		
-		String month = request.getParameter("month");
-		String day = request.getParameter("day");
-		String year = request.getParameter("year");
-		String shopperName = request.getParameter("shopperName");
+		String ownerName = request.getParameter("ownerName");
 				
 		String[] selectedItems = request.getParameterValues("allItemsToAdd");
-		List<ListItem> selectedItemsInList = new ArrayList<ListItem>();
+		List<ContactItems> selectedItemsInList = new ArrayList<ContactItems>();
 		// make sure something was selected – otherwise we get a null pointer exception
 		if (selectedItems != null && selectedItems.length > 0) {
 			for (int i = 0; i < selectedItems.length; i++) {
 				System.out.println(selectedItems[i]);
-				ListItem c = lih.searchForItemById(Integer.parseInt(selectedItems[i]));
+				ContactItems c = cih.searchForContactItemsById(Integer.parseInt(selectedItems[i]));
 				selectedItemsInList.add(c);
 			}
 		}
 		
-		Shopper shopper = new Shopper(shopperName);
-		ListDetails sld = new ListDetails(listName, ld, shopper);
-		sld.setListOfItems(selectedItemsInList);
-		ListDetailsHelper slh = new ListDetailsHelper();
-		slh.insertNewListDetails(sld);
+		ListOwner ListOwner = new ListOwner(ownerName);
+		ListDetails cld = new ListDetails(listName, ListOwner);
+		cld.setListOfContacts(selectedItemsInList);
+		ListDetailsHelper ldh = new ListDetailsHelper();
+		ldh.insertNewListDetails(cld);
 		
 		System.out.println("Success!");
-		System.out.println(sld.toString());
+		System.out.println(cld.toString());
 		
-		getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllAddressBooksServlet").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
