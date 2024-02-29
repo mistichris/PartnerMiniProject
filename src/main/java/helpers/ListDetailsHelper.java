@@ -32,6 +32,7 @@ public class ListDetailsHelper {
 		return allDetails;
 	}
 	
+	
 	public ListDetails searchForListDetailsById(Integer tempId) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
