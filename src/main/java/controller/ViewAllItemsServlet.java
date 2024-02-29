@@ -24,7 +24,11 @@ public class ViewAllItemsServlet extends HttpServlet {
 		ContactItemsHelper dao = new ContactItemsHelper();	//create instance of ListAddressHelper to access helper objects
 		request.setAttribute("allContacts", dao.showAllContacts());  	//set the variable to use in the view all address-list.jsp page
 		String path = "/contact-list.jsp";		//set path for the servlet to redirect to
-		
+		if(dao.showAllContacts().isEmpty()){
+			path = "/index.html";
+
+			}
+			
 		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -33,3 +37,4 @@ public class ViewAllItemsServlet extends HttpServlet {
 	}
 
 }
+
