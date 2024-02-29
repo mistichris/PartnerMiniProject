@@ -14,7 +14,7 @@ import model.ListDetails;
 /**
  * Servlet implementation class NavigationAllListsServlet
  */
-@WebServlet("/NavigationAllListsServlet")
+@WebServlet("/navigationAllListsServlet")
 public class NavigationAllListsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,7 @@ public class NavigationAllListsServlet extends HttpServlet {
 		request.setAttribute("allItems", daoForItems.showAllContacts());
 		String act = request.getParameter("doThisToList");
 		if (act == null) { // no button has been selected
-			getServletContext().getRequestDispatcher("/ViewAllListsServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
 
 		} else if (act.equals("Delete An Address Book")) {
 			try {
@@ -44,7 +44,7 @@ public class NavigationAllListsServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to click a button");
 			} finally {
-				getServletContext().getRequestDispatcher("/ViewAllAddressBooksServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllAddressBooksServlet").forward(request, response);
 			}
 		} else if (act.equals("Edit An Address Book")) {
 			try {
@@ -58,7 +58,7 @@ public class NavigationAllListsServlet extends HttpServlet {
 				}
 				getServletContext().getRequestDispatcher("/edit.addressbook.jsp").forward(request, response);
 			} catch (NumberFormatException e) {
-				getServletContext().getRequestDispatcher("/ViewAllAddressBooksServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllAddressBooksServlet").forward(request, response);
 			}
 		} else if (act.equals("Add An Address Book")) {
 			getServletContext().getRequestDispatcher("/new-addressbook.jsp").forward(request, response);

@@ -12,7 +12,7 @@ import helpers.ContactItemsHelper;
 /**
  * Servlet implementation class ViewAllItemsServlet
  */
-@WebServlet("/ViewAllItemsServlet")
+@WebServlet("/viewAllItemsServlet")
 public class ViewAllItemsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
