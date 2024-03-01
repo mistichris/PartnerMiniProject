@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import model.ListDetails;
+import model.ListOwner;
 
 /**
  * @author Misti Christianson - mchristianson
@@ -39,6 +41,22 @@ public class ListDetailsHelper {
 		ListDetails found = em.find(ListDetails.class, tempId);
 		em.close();
 		return found;
+	}
+	
+	public ListOwner findOwner(String nameToLookUp) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<ListOwner> typedQuery = em.createQuery("SELECT lo FROM ListOwner WHERE lo.listOwnerName = :selectedName", ListOwner.class);
+				typedQuery.setParameter("selectedName", nameToLookUp);
+		typedQuery.setMaxResults(1);
+		ListOwner foundOwner;
+		try {
+			foundOwner = typedQuery.getSingleResult();
+		} catch (NoResultException ex) {
+			foundOwner = new ListOwner(nameToLookUp);
+		}
+		em.close();		
+		return foundOwner;
 	}
 	
 	public void deleteList(ListDetails toDelete) {

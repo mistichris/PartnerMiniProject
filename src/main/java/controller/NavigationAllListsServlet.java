@@ -56,7 +56,7 @@ public class NavigationAllListsServlet extends HttpServlet {
 				if (daoForItems.showAllContacts().isEmpty()) {
 					request.setAttribute("allItems", " ");
 				}
-				getServletContext().getRequestDispatcher("/edit.addressbook.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/edit-adressbook.jsp").forward(request, response);
 			} catch (NumberFormatException e) {
 				getServletContext().getRequestDispatcher("/viewAllAddressBooksServlet").forward(request, response);
 			}

@@ -36,7 +36,7 @@ public class ListOwnerHelper {
 	public ListOwner findOwner(String nameToLookUp) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ListOwner> typedQuery = em.createQuery("SELECT lo FROM ListOwner WHERE lo.listOwnerName = :selectedName", ListOwner.class);
+		TypedQuery<ListOwner> typedQuery = em.createQuery("SELECT lo FROM ListOwner lo WHERE lo.listOwnerName = :selectedName", ListOwner.class);
 				typedQuery.setParameter("selectedName", nameToLookUp);
 		typedQuery.setMaxResults(1);
 		ListOwner foundOwner;
