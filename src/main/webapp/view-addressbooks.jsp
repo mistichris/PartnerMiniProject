@@ -9,15 +9,12 @@
 </head>
 <body>
 	<h1>All Address Books List</h1>
-	<form action="" method="">
+	<form action="navigationAllListsServlet" method="post">
 		<table>
 			<c:forEach items="${requestScope.allLists}" var="currentAddressBook">
-				<tr>
-					<td><input type="radio" name="id"
-						value="${currentAddressBook.id}"></td>
-					<td><h2>${currentlist.listName}</h2></td>
-				</tr>
-
+				<input type="radio" name="id"
+						value="${currentAddressBook.id}"> <b>${currentAddressBook.listName}</b>
+				<table>
 				<tr>
 					<td>Address Book Owner: ${currentAddressBook.owner}</td>
 					<td colspan="2">Created Date:
@@ -32,19 +29,20 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td colspan="3">Email: ${contactsList.email}</td>
+						<td colspan="2">Email: ${contactsList.email}</td>
 					</tr>
 					<tr>
 						<td></td>
-						<td colspan="3">Address: ${contactsList.streetAddress}</td>
+						<td colspan="2">Address: ${contactsList.streetAddress}</td>
 					</tr>
 					<tr>
 						<td></td>
-						<td colspan="4">${contactsList.city}${contactsList.state}
+						<td colspan="3">${contactsList.city}${contactsList.state}
 							${contactsList.zip}</td>
 
 					</tr>
 				</c:forEach>
+				</table>
 			</c:forEach>
 		</table>
 		<input type="submit" value="Edit An Address Book" name="doThisToList">
