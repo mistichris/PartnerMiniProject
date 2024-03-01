@@ -7,11 +7,19 @@
 <title>Edit Contact Item</title>
 </head>
 <body>
-	<form action="editItemServlet" method="post">
-		Store: <input type="text" name="store" value="${itemToEdit.store}">
-		Item: <input type="text" name="item" value="${itemToEdit.item}">
-		<input type="hidden" name="id" value="${itemToEdit.id}"> <input
-			type="submit" value="Save Edited Item">
+	<h1>Edit Book Form</h1>
+	<form action="EditBookServlet" method="post">
+		Book Title: <input type="text" name="book" value="${bookToEdit.book}">
+		Author: <input type="text" name="author" value="${bookToEdit.author}">
+		<input type="hidden" name="id" value="${bookToEdit.id}"> 
+		<input type="submit" value="Save Edited Book">
 	</form>
+		
+	<br />
+	<form action="AddBookServlet" method="post">
+		<button type="submit">Add a Book</button>
+	</form>
+	<br />
+	<button onclick="window.location.href='index.html'">Main Menu</button>
 </body>
 </html>
