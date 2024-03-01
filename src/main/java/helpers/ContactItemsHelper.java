@@ -37,11 +37,12 @@ public class ContactItemsHelper {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ContactItems> typedQuery = em.createQuery("select a from ContactItems a where a.firstName = :selectedFirstName and a.streetAddress = :selectedStreetAddress",
+		TypedQuery<ContactItems> typedQuery = em.createQuery("select ci from ContactItems ci where ci.id = :selectedId",
 				ContactItems.class);
 		// Substitute parameter with actual data from the toDelete item
-		typedQuery.setParameter("selectedFirstName", toDelete.getFirstName());
-		typedQuery.setParameter("selectedStreetAddress", toDelete.getStreetAddress());
+		typedQuery.setParameter("selectedId", toDelete.getId());
+//		typedQuery.setParameter("selectedFirstName", toDelete.getFirstName());
+//		typedQuery.setParameter("selectedStreetAddress", toDelete.getStreetAddress());
 		// we only want one result
 		typedQuery.setMaxResults(1);
 

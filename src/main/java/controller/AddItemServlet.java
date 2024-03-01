@@ -32,12 +32,12 @@ public class AddItemServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 
-		
-		 if (firstName.isEmpty() || lastName.isEmpty() || streetAddress.isEmpty() || city.isEmpty() || state.isEmpty() || zip.isEmpty() || phone.isEmpty() || email.isEmpty() || firstName == null || lastName == null
-				 || streetAddress == null || city == null || state == null || zip == null || phone == null || phone == null || email == null) {
-	            // Redirect to index.html if any parameter is empty
-	            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
-	        } else {
+		//removed this line of script -- prevents from entering a contact with missing information
+//		 if (firstName.isEmpty() || lastName.isEmpty() || streetAddress.isEmpty() || city.isEmpty() || state.isEmpty() || zip.isEmpty() || phone.isEmpty() || email.isEmpty() || firstName == null || lastName == null
+//				 || streetAddress == null || city == null || state == null || zip == null || phone == null || phone == null || email == null) {
+//	            // Redirect to index.html if any parameter is empty
+//	            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+//	        } else {
 	        	
 	     ContactItems ContactItems = new ContactItems(firstName, lastName, streetAddress, city, state, zip, phone, email);
 	     ContactItemsHelper dao = new ContactItemsHelper();
@@ -45,6 +45,6 @@ public class AddItemServlet extends HttpServlet {
 	             
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		}
-	}
+//	}
 
 }

@@ -50,6 +50,9 @@
 			name="doThisToList"> <input type="submit"
 			value="Add An Address Book" name="doThisToList">
 	</form>
+	<form action="viewAllItemsServlet" method="get">
+		<button type="submit">View All Contacts</button>
+	</form>
 	<button onclick="window.location.href='add-contact.jsp'">Add A
 		New Contact</button>
 	<button onclick="window.location.href='index.html'">Main Menu</button>

@@ -35,20 +35,23 @@ public class NavigationServlet extends HttpServlet {
 		doGet(request, response);
 		
 		ContactItemsHelper dao = new ContactItemsHelper();
-		String act = request.getParameter("doThisToItem");
+		String act = request.getParameter("doActionToContact");
 		
 		String path = "/viewAllItemsServlet";
-		
+		System.out.println(act);
 		//delete item 
-		if (act.equals("delete")) {
+		if (act.equals("Delete")) {
+			
 			try {
 				Integer tempId = Integer.parseInt(request.getParameter("id"));
+				System.out.println("TempId: " + tempId);
 				ContactItems itemToDelete = dao.searchForContactItemsById(tempId);
 				dao.deleteItem(itemToDelete);
 				} catch (NumberFormatException e) {
 				System.out.println("Forgot to select an item");
 				}
-		} else if (act.equals("edit")) {
+			//unable to delete an item that is already contained in a list-- have to remove from lists first
+		} else if (act.equals("Edit")) {
 			try {
 			Integer tempId = Integer.parseInt(request.getParameter("id"));
 			ContactItems itemToEdit = dao.searchForContactItemsById(tempId);
