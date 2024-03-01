@@ -19,7 +19,7 @@ import model.ListOwner;
 /**
  * Servlet implementation class CreateNewAddressListServlet
  */
-@WebServlet("/createNewAddressListServlet")
+@WebServlet("/createNewAddressBookServlet")
 public class CreateNewAddressBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,10 +29,10 @@ public class CreateNewAddressBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ContactItemsHelper cih = new ContactItemsHelper();
-		String listName = request.getParameter("listName");
+		String listName = request.getParameter("addressBookName");
 		System.out.println("List Name: " + listName);
 		
-		String ownerName = request.getParameter("ownerName");
+		String ownerName = request.getParameter("listOwner");
 				
 		String[] selectedItems = request.getParameterValues("allItemsToAdd");
 		List<ContactItems> selectedItemsInList = new ArrayList<ContactItems>();
