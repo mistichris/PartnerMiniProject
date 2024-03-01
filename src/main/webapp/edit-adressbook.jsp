@@ -9,7 +9,8 @@
 </head>
 <body>
 	<h1>Edit Address Book</h1>
-	<form>
+	<form method="post" action="EditAddressBookServlet"  items="${requestScope.allLists}" var="currentAddressBook">
+	
 		<!-- List Name -->
 		<!-- List Owner List  -->
 		<!-- Created Date  -->
