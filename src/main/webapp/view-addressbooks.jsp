@@ -23,7 +23,7 @@
 				<c:forEach items="${currentAddressBook.listOfContacts}"
 					var="contactsList">
 					<tr>
-						<td>${contactsList.firstName}${contactsList.lastName}</td>
+						<td colspan = "2">${contactsList.firstName} ${contactsList.lastName}</td>
 						<td></td>
 						<td colspan="3">Phone#: ${contactsList.phone}</td>
 					</tr>
