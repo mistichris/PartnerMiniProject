@@ -54,6 +54,7 @@
 	</form>
 	<button onclick="window.location.href='add-contact.jsp'">Add A
 		New Contact Instead</button>
+	<button onclick="window.location.href='index.html'">Main Menu</button>
 
 
 </body>

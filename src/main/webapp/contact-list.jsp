@@ -32,6 +32,10 @@
 	<br />
 	<button onclick="window.location.href='add-contact.jsp'">Add A
 		New Contact</button>
+
+	<form action="viewAllAddressBooksServlet" method="get">
+		<button type="submit">View All Address Books</button>
+	</form>
 	<button onclick="window.location.href='index.html'">Main Menu</button>
 </body>
 </html>

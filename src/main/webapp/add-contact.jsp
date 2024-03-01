@@ -35,7 +35,12 @@
 		</table>
 		<input type="submit" name="Add Contact">
 	</form>
-
+	<form action="viewAllItemsServlet" method="get">
+		<button type="submit">View All Contacts</button>
+	</form>
+	<form action="viewAllAddressBooksServlet" method="get">
+		<button type="submit">View All Address Books</button>
+	</form>
 	<button onclick="window.location.href='index.html'">Main Menu</button>
 </body>
 </html>
